@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+         /* 페이지가 로드될때 실행되는 */
+        alert("test");
+        function PrintResult() {
+            var x, y;
+            x = prompt("x값을 입력하세요", 0);
+            y = prompt("y값을 입력하세요", 0);
+            //alert(parseInt(x) + parseInt(y));
+            x = parseInt(x);
+            y = parseInt(y);
+            btnPrint.value = x + y;
+        }
+        btnPrint.onclick = PrintResult; //함수를 호출하기만 하는거지 결과값까지 받아보려는 것은 아니기때문에 괄호 안씀.
+    </script>
+</head>
+<body>
+    <!-- 이벤트 실행 -->
+    <!-- <input type="button" onclick="PrintResult();"value="출력" /> -->
+    <input type="button" id="btnPrint" />
+</body>
+</html>
