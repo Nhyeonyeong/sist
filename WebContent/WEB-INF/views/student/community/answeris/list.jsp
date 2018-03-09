@@ -6,7 +6,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="my" uri="http://www.newlecture.com/jsp/tags/control" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<
+
 <main class="main" ng-controller="notice-controller">
 <h2 class="main title">내 오류노트</h2>
 
@@ -48,7 +48,7 @@
 		</thead>
 		<tbody>
 
-			<%--                <%for(AnswerisView a : list){  %> --%>
+	
 
 			<c:forEach var="ai" items="${list}">
 				<tr>
@@ -57,18 +57,17 @@
 
 					<td>${ai.language }</td>
 					<td class="text-ellipsis">${ai.platform }</td>
-					<td>${ai.regDate }<%-- <%((List<AnswerisView>).request.getAttribute("list")).get(0).getRegDate();%>   --%>
+					<td>
+					
 					</td>
 				</tr>
 			</c:forEach>
 
-			<%--                <%} %> --%>
-
-			<%--                <%if(list.isEmpty()) %> --%>
+	
 			<tr>
 				<td colspan="4">작성된 글이 없습니다.</td>
 			</tr>
-			<%--                <% %> --%>
+	
 
 		</tbody>
 	</table>
@@ -83,6 +82,7 @@
 </div>
 
 <div class="margin-top text-align-right">
+	<span class="btn-text btn-default btn-clone1">복제1</span>
 	<a href="reg" class="btn-text btn-default">글쓰기</a>
 </div>
 
@@ -121,4 +121,28 @@
 
 </div>
 </main>
+
+<script>
+	window.addEventListener("load",function(){
+		var tbody= document.querySelector(".notice table tbody");
+		var origin = tbody.querySelector("tr:first-child");
+		var cloneButton1 = document.querySelector(".btn-clone1");
+
+		cloneButton1.onclick = function(){
+
+			var answerises = [{id:"1",title:"aaa"},{id:"2",title:"bbb"}];
+			
+			for(var i=0; i<answerises.length; i++){
+				var copy = origin.cloneNode(true);
+				var titleTd=copy.querySelector("td:nth-child(1)");
+				titleTd.textContent = answerises[i].title;
+			}
+
+			tbody.appendChild(copy);
+	
+		};
+
+
+	});
+</script>
 

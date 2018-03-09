@@ -4,6 +4,39 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        .list-gallery {
+        }
+
+            .list-gallery ul {
+            }
+
+            /*.list-gallery li,*/
+            .item-photo1 {
+                width: 100px;
+                border: 1px solid red;
+                padding: 0px;
+                list-style: none;
+            }
+
+                /*.list-gallery li img,*/
+                .item-photo1 img {
+                    width: 100%;
+                }
+
+            /*.list-gallery li,*/
+            .item-photo2 {
+                width: 200px;
+                border: 1px solid blue;
+                padding: 0px;
+                list-style: none;
+            }
+
+                /*.list-gallery li img,*/
+                .item-photo2 img {
+                    width: 100%;
+                }
+    </style>
     <script src="exam2-document.js"></script>
 </head>
 <body>
@@ -18,7 +51,45 @@
     <hr />
     <section>
         <h1>예제 1 : 노드 선택</h1>
-        <input id="btn-node-sel" type="button" value="노드 선택하기" />
+        <input type="button" value="노드 선택하기" />
+    </section>
+    <hr />
+
+    <section id="ex2">
+        <h1>예제 2 : 속성 변경</h1>
+        <div>
+            <input class="txt-img-chang" type="text" />
+            <input class="btn-img-change" type="button" value="변경" />
+        </div>
+        <div>
+            <img style="width:200px;" src="http://cfs3.blog.daum.net/image/7/blog/2007/07/27/21/08/46a9dff4d049d&filename=%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C33222.bmp" />
+        </div>
+    </section>
+    <hr />
+
+    <section id="ex3">
+        <h1>예제 3 : 스타일 변경, 노드추가, 노드삭제</h1>
+        <div>
+            <input class="btn-style-change" type="button" value="변경" />
+            <input type="text" />
+            <input class="add-text-node-button" type="button" value="텍스트추가" />
+            <input class="add-element-node-button" type="button" value="텍스트추가" />
+        </div>
+        <section class="list-gallery">
+            <h1>겔러리</h1>
+            <div></div>
+            <ul>
+                <li class="item-photo1">
+                    <img src="http://cfs3.blog.daum.net/image/7/blog/2007/07/27/21/08/46a9dff4d049d&filename=%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C33222.bmp" />
+                </li>
+                <li class="item-photo1">
+                    <img src="http://cfs3.blog.daum.net/image/7/blog/2007/07/27/21/08/46a9dff4d049d&filename=%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C33222.bmp" />
+                </li>
+                <li class="item-photo1">
+                    <img src="http://cfs3.blog.daum.net/image/7/blog/2007/07/27/21/08/46a9dff4d049d&filename=%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C33222.bmp" />
+                </li>
+            </ul>
+        </section>
     </section>
 </body>
 </html>
